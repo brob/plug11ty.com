@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+  open_authoring: true
+  repo: brob/plug11ty.com # Path to your GitHub repository
+
+publish_mode: editorial_workflow
+media_folder: "assets/uploads" # Media files will be stored in the repo under images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+
+collections:
+  - name: "plugins"
+    label: "Plugins"
+    folder: plugins"
+    create: true
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "/plugin.njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "GitHub/NPM URL", name: "githubUrl", widget: "string", required: false }
