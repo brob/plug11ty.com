@@ -11,7 +11,7 @@ public_folder: "/images/uploads" # The src attribute for uploaded media will beg
 collections:
   - name: "plugins"
     label: "Plugins"
-    folder: plugins"
+    folder: "plugins"
     create: true
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "/plugin.njk" }
