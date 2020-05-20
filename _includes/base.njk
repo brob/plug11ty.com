@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
 </head>
 <body>
     {% include "header.njk" %}
-    <section class="banner">
-        <h1>{{ title }}</h1>
-        <p>{{ description }}</p>
+    <section class="banner bg-green-200 py-20 mb-10">
+        <div class="max-w-3xl mx-auto">
+        {% block bannerContent %}
+            <h1 class="text-4xl">{{ title }}</h1>
+            <p>{{ description }}</p>
+        {% endblock bannerContent %}
+        </div>
+
     </section>
-    <main class="main">
+    <main class="main container mx-auto">
        {% block main %}
+            {{ content | safe }}
        {% endblock main %}
     </main>
 </body>

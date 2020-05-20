@@ -1,8 +1,17 @@
 {% extends 'base.njk' %}
 
 {% block main %}
- {% for plugin in collections.plugins %}
-    <h2><a href="{{ plugin.url }}">{{ plugin.data.title }}</a></h2>
-{% endfor %}
-{{ content | safe }}
+    <h2>Plugins</h2>
+    {% for plugin in collections.plugins %}
+        <div class="max-w-sm rounded overflow-hidden shadow-md">
+            <a href="{{ plugin.url }}">
+            <div class="px-6 py-4">
+                <h3 class="font-bold text-xl mb-2">{{ plugin.data.title }}</h3>
+                <p class="text-gray-700 text-base">
+                    {{ plugin.data.description }}
+                </p>
+            </div>
+            </a>
+        </div>
+    {% endfor %}
 {% endblock main %}

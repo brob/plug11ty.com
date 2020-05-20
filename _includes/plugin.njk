@@ -1,1 +1,11 @@
 {% extends 'base.njk' %}
+
+
+{% block bannerContent %}
+    <h1 class="text-4xl">{{ title }}</h1>
+    <p>{{ description }}</p>
+    <ul class="links flex flex-wrap py-2 justify-around">
+        <li><a href="{{ githubUrl }}">Repository</a></li>
+        <li><a href="{{ maintainer.url }}">Maintained by {{ maintainer.name }}</a></li>
+    </ul>
+{% endblock bannerContent %}

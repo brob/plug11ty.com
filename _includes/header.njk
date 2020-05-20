@@ -1,7 +1,26 @@
-<header>
-<a href="/">{{ '/assets/logo.svg' | svgContents | safe }}</a>
-<nav class="navigation">
-    <a href="/plugins/">Plugins</a>
-    <a href="/about/">About</a>
-</nav>
+<style>
+header a svg {
+    max-width: 10rem;
+    max-height: 3rem;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.75rem;
+}
+h4 {
+    font-size: 1.5rem;
+}
+</style>
+<header class="container mx-auto flex md:flex-row items-center lg:justify-start flex-wrap p-6">
+<a class="mr-6 max-w-xs" href="/">{{ '/assets/logo.svg' | svgContents | safe }}</a>
+  <div class="block lg:flex lg:items-center">
+    <nav class="text-lg ">
+        <a class="mx-2" href="/plugins/">Plugins</a>
+        <a class="mx-2" href="/about/">About</a>
+    </nav>
+    </div>
+<a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded hover:border-transparent hover:bg-green-200 ml-auto">Add a Plugin</a>
+
 </header>
