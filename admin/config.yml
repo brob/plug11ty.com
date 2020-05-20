@@ -17,3 +17,5 @@ collections:
       - { label: "Layout", name: "layout", widget: "hidden", default: "/plugin.njk" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "GitHub/NPM URL", name: "githubUrl", widget: "string", required: false }
+      - { label: "Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
