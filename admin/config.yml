@@ -21,8 +21,14 @@ collections:
         widget: "object" 
         required: false
         fields: 
-          - { label: "Maintainer Name", name: "name", widget: "string" }
-          - { label: "Maintainer URL", name: "url", widget: "string" }
+          - label: "Maintainer Name"
+            name: "name"
+            widget: "string"
+            required: false
+          - label: "Maintainer URL"
+            name: "url"
+            widget: "string"
+            required: false
       - { label: "GitHub/NPM URL", name: "githubUrl", widget: "string", required: false }
       - { label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
