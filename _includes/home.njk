@@ -1,0 +1,8 @@
+{% extends 'base.njk' %}
+
+{% block main %}
+ {% for plugin in collections.plugins %}
+    <h2><a href="{{ plugin.url }}">{{ plugin.data.title }}</a></h2>
+{% endfor %}
+{{ content | safe }}
+{% endblock main %}
