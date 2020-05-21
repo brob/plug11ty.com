@@ -3,6 +3,7 @@ title: SVG Contents
 categories:
   - utility
   - images
+  - universal
 maintainer:
   name: Bryan Robinson
   url: https://bryanlrobinson.com
