@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Plug11ty - The 11ty Plugin Repository</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
@@ -13,8 +13,8 @@
     <section class="banner bg-green-200 py-20 mb-10">
         <div class="container max-w-5xl mx-auto">
         {% block bannerContent %}
-            <h1 class="text-5xl">{{ title }}</h1>
-            <p>{{ description }}</p>
+            <h1 class="text-5xl mb-2">{{ title }}</h1>
+            <p class="text-xl">{{ description }}</p>
         {% endblock bannerContent %}
         </div>
 
@@ -24,5 +24,8 @@
             {{ content | safe }}
        {% endblock main %}
     </main>
+
+    {% include "footer.njk" %}
+
 </body>
 </html>
