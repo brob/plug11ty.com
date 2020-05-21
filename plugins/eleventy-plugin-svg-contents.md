@@ -1,6 +1,7 @@
 ---
 title: SVG Contents
-categories: utility
+categories:
+  - utility
 maintainer:
   name: Bryan Robinson
   url: https://bryanlrobinson.com
