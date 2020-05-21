@@ -22,6 +22,13 @@ collections:
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "/plugin.njk" }
       - { label: "Title", name: "title", widget: "string" }
+      - label: "Categories"
+        name: "categories" 
+        widget: "relation"
+        collection: "categories"
+        searchFields: ["name"]
+        valueField: "name"
+        required: false     
       - label: "Maintainer Info"
         name: "maintainer" 
         widget: "object" 
@@ -35,6 +42,7 @@ collections:
             name: "url"
             widget: "string"
             required: false
+      
       - { label: "GitHub/NPM URL", name: "githubUrl", widget: "string", required: false }
       - { label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
