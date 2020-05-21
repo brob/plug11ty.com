@@ -27,8 +27,8 @@ collections:
         name: "categories" 
         widget: "relation"
         collection: "categories"
-        searchFields: ["name"]
-        valueField: "name"
+        searchFields: ["title"]
+        valueField: "title"
         required: false     
       - label: "Maintainer Info"
         name: "maintainer" 
