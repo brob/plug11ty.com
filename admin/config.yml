@@ -14,7 +14,7 @@ collections:
     folder: "categories"
     create: true
     fields: 
-      - { label: "Category Name", name: "category", widget: "string" }
+      - { label: "Category Name", name: "title", widget: "string" }
       - { label: "Body", name: "body", required: false, widget: "markdown" }
   - name: "plugins"
     label: "Plugins"
