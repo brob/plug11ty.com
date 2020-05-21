@@ -1,6 +1,9 @@
 ---
 layout: /plugin.njk
 title: Blog Tools
+categories:
+  - content
+  - collection
 maintainer:
   name: Bryan Robinson
   url: https://bryanlrobinson.com
