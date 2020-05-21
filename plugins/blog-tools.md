@@ -4,6 +4,7 @@ title: Blog Tools
 categories:
   - content
   - collection
+  - universal
 maintainer:
   name: Bryan Robinson
   url: https://bryanlrobinson.com
