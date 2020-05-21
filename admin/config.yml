@@ -9,6 +9,12 @@ media_folder: "assets/uploads" # Media files will be stored in the repo under im
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
+  - name: "categories"
+    label: "Categories"
+    folder: "categories"
+    fields: 
+      - { label: "Category Name", name: "category", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
   - name: "plugins"
     label: "Plugins"
     folder: "plugins"
