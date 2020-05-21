@@ -12,6 +12,7 @@ collections:
   - name: "categories"
     label: "Categories"
     folder: "categories"
+    create: true
     fields: 
       - { label: "Category Name", name: "category", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
