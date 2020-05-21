@@ -29,7 +29,8 @@ collections:
         collection: "categories"
         searchFields: ["title"]
         valueField: "title"
-        required: false     
+        required: false
+        multiple: true  
       - label: "Maintainer Info"
         name: "maintainer" 
         widget: "object" 
