@@ -17,13 +17,13 @@ description: This plugin is a series of shortcodes and filters that aim to help
 
 Available on [npm](https://www.npmjs.com/package/eleventy-plugin-blog-tools).
 
-```bash
+```shell
 npm install eleventy-plugin-blog-tools --save
 ```
 
 Open up your Eleventy config file (probably `.eleventy.js`) and add the plugin:
 
-```
+```js
 const blogTools = require("eleventy-plugin-blog-tools");
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(blogTools);
@@ -41,9 +41,8 @@ This custom tag creates an excerpt from a page with front matter and/or standard
 
 Main Usage:
 
-```html
-{% raw %}
-    {% excerpt post %}
+```twig
+{% raw %}{% excerpt post %}
 {% endraw %}
 ```
 
@@ -59,18 +58,16 @@ The Excerpt is built from one of three options:
 
 The YouTube shortcode takes a YouTube video ID and creates the markup for a fluidly-responsive YouTube embed.
 
-```
-{% raw %}
-{% youtube "idstring" %}
+```twig
+{% raw %}{% youtube "idstring" %}
 {% endraw %}
 ```
 ### Vimeo
 
 The YouTube shortcode takes a Vimeo video ID and creates the markup for a fluidly-responsive Vimeo embed.
 
-```
-{% raw %}
-{% vimeo "idstring" %}
+```twig
+{% raw %}{% vimeo "idstring" %}
 {% endraw %}
 ```
 
@@ -78,10 +75,8 @@ The YouTube shortcode takes a Vimeo video ID and creates the markup for a fluidl
 ### CodePen
 
 The CodePen shortcode takes multiple values to customize your embed.
-```
-{% raw %}
-
-{% codepen "URL", "codepen tabs string", "unitlessHeight", "theme ID" %}
+```twig
+{% raw %}{% codepen "URL", "codepen tabs string", "unitlessHeight", "theme ID" %}
 
 {% codepen "https://codepen.io/url/path" %}
 {% codepen "http://codepen.io/brob/pen/vGRBeQ/", "css,result", "900", "26704"  %}
@@ -104,13 +99,19 @@ The related filter will pull items from a list based on parameters passed to the
 
 The basic usage is to filter a collection based on an array of items and a threshold.
 
-Syntax: `{{ collections.posts | related(<sort-field-key>, <sort-field-data>, <threshold-integer Defaults to 1>, <URL-to-Exclude-optional>)}}`
+Syntax: 
+```twig 
+{%raw %}{{ collections.posts | related(<sort-field-key>, 
+                              <sort-field-data>, 
+                              <threshold-integer Defaults to 1>,
+                              <URL-to-Exclude-optional>)
+}}{% endraw %}
+```
 
 The threshold integer is meant to force a number of array items in common. Defaults to 1.
 
-```
-{% raw %}
-{% for post in collections.posts | related("sortField", sortField, 1) %}
+```twig
+{% raw %}{% for post in collections.posts | related("sortField", sortField, 1) %}
   {{ post.data.title }}
 {% endfor %}
 {% endraw %}
