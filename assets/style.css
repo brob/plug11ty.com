@@ -1,3 +1,6 @@
+html {
+    font-size: 110%;
+}
 a {
     color: #2caf7b;
     transition: .3s ease-out;
