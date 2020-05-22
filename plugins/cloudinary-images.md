@@ -10,7 +10,7 @@ githubUrl: https://github.com/juanfernandes/eleventy-plugin-cloudinary
 description: An Eleventy shortcode that allows you to add an image from your
   cloudinary account.
 ---
-# `{% cloudinaryImage %}`
+# `{% raw %}{% cloudinaryImage %}{% endraw %}`
 
 An [Eleventy](https://www.11ty.dev/) shortcode that allows you to add an image from your cloudinary account.
 
@@ -26,12 +26,12 @@ Turns the [config](https://www.11ty.io/docs/config/) like this:
 
 and [shortcodes](https://www.11ty.io/docs/shortcodes/) like this:
 
-```nunjucks
-{% cloudinaryImage
+```twig
+{% raw %}{% cloudinaryImage
   "cat-photo.jpg",
   "f_auto",
   "Picture of a cat"
-%}
+%}{% endraw %}
 ```
 
 into an `<img>` tag, like this:
@@ -61,7 +61,7 @@ After you've ran `npm install`, open up your Eleventy config file (`.eleventy.js
 2. Set your Cloudinary CloudName config parameter
 3. Use `addPlugin`.
 
-```
+```javascript
 // ①
 const pluginCloudinaryImage = require( "eleventy-plugin-cloudinary" )
 
@@ -80,7 +80,9 @@ module.exports = function( eleventyConfig ) {
 
 Use the following shortcode snippet in your Markdown file:
 
-`{% cloudinaryImage "sample.jpg", "w_320,f_auto", "Cloudinary Sample Image" %}`
+```twig
+{% raw %}{% cloudinaryImage "sample.jpg", "w_320,f_auto", "Cloudinary Sample Image" %}{% endraw %}
+```
 
 <img src="https://res.cloudinary.com/demo/image/upload/w_300,h_200,c_crop/sample.jpg" alt="Cloudinary Sameple Image">
 
