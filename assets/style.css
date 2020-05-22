@@ -1,8 +1,26 @@
+a {
+    color: #2caf7b;
+    transition: .3s ease-out;
+}
+a:hover {
+    color: #116f49;
+}
 .main > * + * {
     margin-top: 1.25em;
 }
 
+.main ul, .main ol {
+    list-style: unset;
+    padding-left: 1rem;
 
+}
+.main ul li, .main ol li {
+    margin-bottom: .5rem;
+}
+
+.container {
+    width: 95vw;
+}
 
 
 
