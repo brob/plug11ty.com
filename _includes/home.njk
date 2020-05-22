@@ -1,12 +1,17 @@
 {% extends 'base.njk' %}
 
 {% block main %}
+    <div x-data="loadPlugins()">
+    <input x-ref="searchField" x-model="search" x-on:keydown.window.prevent.slash="$refs.searchField.focus()" placeholder="Search for a plugin..." type="search" class="block w-full bg-gray-200 focus:outline-none focus:bg-white focus:shadow text-gray-700 font-bold rounded-lg px-4 py-3">
+
     <div class="flex align-center">
         <h2>Plugins</h2>
         <a href="/admin/#/collections/plugins/new" class="self-center text-sm px-4 py-2 leading-none border rounded hover:border-transparent hover:bg-green-200 ml-auto">Add Plugin</a>
     </div>
     <div class="flex flex-wrap mb-4 -mx-4">
     {% for plugin in collections.plugins %}
+        <template x-for="item in filteredPlugins" :key="item">
+
         <div class="w-full sm:w-1/2 md:w-1/3 flex-grow mb-10 mx-4 rounded overflow-hidden shadow-md hover:bg-green-100 hover:shadow-lg">
             <a href="{{ plugin.url }}">
             <div class="px-6 py-4">
@@ -23,6 +28,9 @@
 
             </a>
         </div>
+    </template>
+
     {% endfor %}
+    </div>
     </div>
 {% endblock main %}

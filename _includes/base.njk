@@ -15,6 +15,7 @@
 <meta property="og:image" content="https://plug11ty.com/assets/plug-social.png" />
 
 <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
 
 </head>
@@ -36,6 +37,25 @@
     </main>
 
     {% include "footer.njk" %}
+
+<script>
+    async function loadPlugins() {
+        const sourceData = await (await fetch('/plugins.json')).json();
+    console.log(sourceData)
+      return {
+        search: '',
+        myForData: sourceData,
+        get filteredPlugins() {
+          if (this.search === '') {
+            return this.myForData
+          }
+          return this.myForData.filter(item => {
+            return item.name.toLowerCase().includes(this.search.toLowerCase())
+          })
+        }
+      }
+    }
+  </script>
 
 </body>
 </html>
