@@ -51,7 +51,7 @@ Copy the config above and open up your Eleventy config file (probably `.eleventy
 Install via NPM
 The plugin is now [available on npm](https://www.npmjs.com/package/eleventy-plugin-cloudinary).
 
-```
+```shell
 npm install eleventy-plugin-cloudinary
 ```
 
