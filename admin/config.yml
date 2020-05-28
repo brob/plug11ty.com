@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   branch: master # Branch to update (optional; defaults to master)
   open_authoring: true
   repo: brob/plug11ty.com # Path to your GitHub repository
