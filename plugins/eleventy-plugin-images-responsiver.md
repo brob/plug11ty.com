@@ -3,6 +3,8 @@ layout: /plugin.njk
 title: eleventy-plugin-images-responsiver
 categories:
   - images
+  - markdown
+  - performance
 maintainer:
   name: Nicolas Hoizey
   url: https://nicolas-hoizey.com
