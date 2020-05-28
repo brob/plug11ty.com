@@ -17,6 +17,117 @@
 <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
+<script>
+
+
+var sourceData = {
+    data: [
+        {
+            name: "Blog Tools",
+            description:
+                "This plugin is a series of shortcodes and filters that aim to help you write and organize your blog",
+            url: "/plugins/blog-tools/",
+            remoteUrl: "https://github.com/brob/eleventy-plugin-blog-tools",
+            categories: ["content", "collection", "universal"]
+        },
+
+        {
+            name: "Cloudinary Images",
+            description:
+                "An Eleventy shortcode that allows you to add an image from your cloudinary account.",
+            url: "/plugins/cloudinary-images/",
+            remoteUrl:
+                "https://github.com/juanfernandes/eleventy-plugin-cloudinary",
+            categories: ["images"]
+        },
+
+        {
+            name: "Eleventy RSS Feed",
+            description:
+                "A pack of plugins for generating an RSS feed (actually an Atom feed, but who’s counting) using the Nunjucks templating engine.",
+            url: "/plugins/eleventy-plugin-rss/",
+            remoteUrl: "https://github.com/11ty/eleventy-plugin-rss",
+            categories: ["utility", "official", "content"]
+        },
+
+        {
+            name: "Inclusive Language",
+            description:
+                "An Eleventy linter plugin to check for inclusive language in markdown files. Inspired by CSS Tricks’ Words to Avoid in Educational Writing. No browser/client JavaScript here—everything is this plugin is done at build-time.",
+            url: "/plugins/inclusive-language/",
+            remoteUrl:
+                "https://github.com/11ty/eleventy-plugin-inclusive-language",
+            categories: ["official", "content"]
+        },
+
+        {
+            name: "Navigation",
+            description:
+                "A plugin for creating hierarchical navigation in Eleventy projects. Supports breadcrumbs too! Used in production on this very website!",
+            url: "/plugins/navigation/",
+            remoteUrl: "https://github.com/11ty/eleventy-navigation",
+            categories: ["utility", "official", "content"]
+        },
+
+        {
+            name: "SVG Contents",
+            description:
+                "This is where a plugin description would go and it talks about a lot of stuff!",
+            url: "/plugins/eleventy-plugin-svg-contents/",
+            remoteUrl: "https://github.com/brob/eleventy-plugin-svg-contents",
+            categories: ["utility", "images", "universal"]
+        },
+
+        {
+            name: "Syntax Highlighting",
+            description:
+                "A pack of Eleventy plugins for syntax highlighting. No browser/client JavaScript here, these highlight transformations are all done at build-time.",
+            url: "/plugins/eleventy-syntax-highlight/",
+            remoteUrl:
+                "https://github.com/11ty/eleventy-plugin-syntaxhighlight",
+            categories: ["utility", "official"]
+        }
+    ]
+};
+
+
+
+
+async function loadPlugins() {
+    const data = async function loadData() {
+        const fetchedData = await fetch('/plugins.json');
+        const jsonData = await fetchedData.json();
+        const dataArray = await jsonData.data;
+        console.log(dataArray)
+        return await dataArray
+    } 
+    const returnedData = await data();
+
+    const SEARCH_STRING = ''
+    return {
+        search: SEARCH_STRING,
+        myForData: returnedData,
+        get filteredPlugins() {
+            if (this.search === "") {
+                return this.myForData;
+            }
+            return this.myForData.filter((item) => {
+                return (
+                    item.name
+                        .toLowerCase()
+                        .includes(this.search.toLowerCase()) ||
+                    item.description
+                        .toLowerCase()
+                        .includes(this.search.toLowerCase())
+                );
+            });
+        }
+    };
+}
+
+
+  </script>
+
 
 </head>
 <body>
@@ -37,25 +148,6 @@
     </main>
 
     {% include "footer.njk" %}
-
-<script>
-    async function loadPlugins() {
-        const sourceData = await (await fetch('/plugins.json')).json();
-    console.log(sourceData)
-      return {
-        search: '',
-        myForData: sourceData,
-        get filteredPlugins() {
-            if (this.search === '') {
-                return this.myForData
-            }
-            return this.myForData.filter(item => {
-                return item.employee_name.toLowerCase().includes(this.search.toLowerCase())
-            })
-        }
-      }
-    }
-  </script>
 
 </body>
 </html>

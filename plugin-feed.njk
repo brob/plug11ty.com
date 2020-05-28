@@ -1,0 +1,23 @@
+---
+permalink: "/plugins.json"
+---
+
+{
+    "data": [
+        {% for plugin in collections.plugins %}
+        {
+            "name": "{{ plugin.data.title }}",
+            "description": "{{ plugin.data.description }}",
+            "url": "{{ plugin.url }}",
+            "remoteUrl": "{{ plugin.data.githubUrl }}",
+            "categories": [
+                {% for category in plugin.data.categories %}
+                {{ category | log }}
+                    "{{category}}"{{ ',' if not loop.last }}
+                {% endfor %}
+            ]
+        }{{ ',' if not loop.last }}
+        {% endfor %}
+    ]
+
+}
