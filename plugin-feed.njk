@@ -9,8 +9,13 @@ permalink: "/plugins.json"
             "name": "{{ plugin.data.title }}",
             "description": "{{ plugin.data.description }}",
             "url": "{{ plugin.url }}",
-            "remoteUrl": "{{ plugin.data.githubUrl }}"
-        }{% if not loop.last %},{% endif %}
+            "remoteUrl": "{{ plugin.data.githubUrl }}",
+            "categories": [
+                {% for category in plugin.data.categories %}
+                    "{{category}}"{{ ',' if not loop.last }}
+                {% endfor %}
+            ]
+        }{{ ',' if not loop.last }}
         {% endfor %}
     ]
 
