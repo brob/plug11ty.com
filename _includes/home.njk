@@ -37,10 +37,8 @@
                     </div>
 
                     <div class="px-6 py-4">
-                        <!-- {% for category in plugin.data.categories %} -->
                         <template x-for="category in item.categories">
                             <span class="inline-block bg-green-100 border-2 border-green-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2" x-text="category">{{ category }}</span>
-                            <!-- {% endfor %} -->
                         </template>
                     </div>
                 </a>
