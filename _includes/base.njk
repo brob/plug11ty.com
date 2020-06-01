@@ -93,8 +93,8 @@ var sourceData = {
 
 
 
-async function loadPlugins() {
-    const data = async function loadData() {
+function loadPlugins() {
+ /*   const data = async function loadData() {
         const fetchedData = await fetch('/plugins.json');
         const jsonData = await fetchedData.json();
         const dataArray = await jsonData.data;
@@ -102,12 +102,12 @@ async function loadPlugins() {
         return await dataArray
     } 
     const returnedData = await data();
-
-    const SEARCH_STRING = ''
+*/
     return {
-        search: SEARCH_STRING,
-        myForData: returnedData,
+        search: '',
+        myForData: window.DATA,
         get filteredPlugins() {
+            console.log(window.DATA)
             if (this.search === "") {
                 return this.myForData;
             }

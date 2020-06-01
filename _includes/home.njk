@@ -2,7 +2,7 @@
 
 {% block main %}
     <div x-data="loadPlugins()">
-      <input x-ref="searchField" x-model="this.search" x-on:keydown.window.prevent.slash="$refs.searchField.focus()" placeholder="Search for an employee..." type="search" class="block w-full bg-gray-200 focus:outline-none focus:bg-white focus:shadow text-gray-700 font-bold rounded-lg px-4 py-3">
+      <input x-ref="searchField" x-model="search" x-on:keydown.window.prevent.slash="$refs.searchField.focus()" placeholder="Search for an employee..." type="search" class="block w-full bg-gray-200 focus:outline-none focus:bg-white focus:shadow text-gray-700 font-bold rounded-lg px-4 py-3">
 
     <div class="flex align-center">
         <h2>Plugins</h2>
@@ -27,7 +27,7 @@
                 </a>
             </div>
         {% endfor %}
-        <template x-for="item in this.filteredPlugins" :key="item">
+        <template x-for="item in filteredPlugins" :key="item">
             <div class="w-full sm:w-1/2 md:w-1/3 flex-grow mb-10 mx-4 rounded overflow-hidden shadow-md hover:bg-green-100 hover:shadow-lg">
                 <a x-bind:href="item.url">
                     <div class="px-6 py-4">

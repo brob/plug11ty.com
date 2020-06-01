@@ -12,7 +12,6 @@ permalink: "/plugins.json"
             "remoteUrl": "{{ plugin.data.githubUrl }}",
             "categories": [
                 {% for category in plugin.data.categories %}
-                {{ category | log }}
                     "{{category}}"{{ ',' if not loop.last }}
                 {% endfor %}
             ]

@@ -1,3 +1,21 @@
+<script>
+var DATA = [
+        {% for plugin in collections.plugins %}
+        {
+            "name": "{{ plugin.data.title }}",
+            "description": "{{ plugin.data.description }}",
+            "url": "{{ plugin.url }}",
+            "remoteUrl": "{{ plugin.data.githubUrl }}",
+            "categories": [
+                {% for category in plugin.data.categories %}
+                    "{{category}}"{{ ',' if not loop.last }}
+                {% endfor %}
+            ]
+        }{{ ',' if not loop.last }}
+        {% endfor %}
+    ]
+</script>
+
 
 <footer class="bg-green-200 mt-12 py-4">
     <div class="container max-w-5xl mx-auto text-center">
