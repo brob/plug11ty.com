@@ -1,6 +1,6 @@
 ---
 layout: /plugin.njk
-title: Table of Contents
+title: Table of Contents (TOC)
 categories:
   - content
   - utility
