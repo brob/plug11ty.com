@@ -31,8 +31,8 @@ module.exports = (eleventyConfig) => {
 
 Now you can use the `readingTime` filter in your Nunjuck templates:
 
-```html
-<span>About {{ someTextContent | readingTime } reading time}</span>
+```twig
+<span>About {% raw %}{{ someTextContent | readingTime }}{% endraw %} reading time</span>
 ```
 
 prints
@@ -43,8 +43,8 @@ prints
 
 Example `post.njk` template:
 
-```html
-<article role="article">
+```twig
+{% raw %}<article role="article">
     <header>
         <h1>{{ title }}</h1>
         <p>
@@ -55,16 +55,16 @@ Example `post.njk` template:
     <div>
         {{ content | safe }}
     </div>
-</article>
+</article>{% endraw %}
 ```
 
 If you're in a collection loop, this filter accepts a collection object too:
 
-```html
-{% for post in posts %}
+```twig
+{% raw %}{% for post in posts %}
     <li>
         <h1>{{post.title}}</h1>
         <p>About {{ post | readingTime }} reading time.</p>
     </li>
-{% endfor %}
+{% endfor %}{% endraw %}
 ```
