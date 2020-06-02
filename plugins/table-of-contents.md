@@ -28,7 +28,7 @@ description: This Eleventy plugin will generate a TOC from page content using an
 
 ### 1. Install the plugin
 
-```sh
+```bash
 npm i --save eleventy-plugin-toc
 ```
 
@@ -48,7 +48,7 @@ module.exports = function (eleventyConfig) {
 
 ### 3. Use the filter in your template
 
-```liquid
+```twig
 {% raw %}<article>
   {{ content }}
 </article>
@@ -61,7 +61,7 @@ module.exports = function (eleventyConfig) {
 
 Pass a stringified JSON object (must be `JSON.parse()`-able) as an option for in your template. Because this is an object, you only need to include the key-value pairs you need to override; [defaults](#default-options) will be preserved.
 
-```liquid
+```twig
 {% raw %}<aside>
   {{ content | toc: '{"tags":["h2","h3"],"wrapper":"div","wrapperClass":"content-tableau"}' }}
 </article>{% endraw %}
