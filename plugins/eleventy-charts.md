@@ -10,8 +10,6 @@ maintainer:
 githubUrl: https://github.com/idris-maps/eleventy-charts
 description: An eleventy plugin to create charts
 ---
-# eleventy-charts
-
 An [`eleventy`](https://www.11ty.dev/) plugin to create charts
 
 ## Usage
