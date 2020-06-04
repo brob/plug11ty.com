@@ -16,7 +16,7 @@ An [`eleventy`](https://www.11ty.dev/) plugin to create charts
 
 ## Usage
 
-```
+```shell
 npm install eleventy-charts --save-dev
 ```
 
