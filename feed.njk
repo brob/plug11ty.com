@@ -1,0 +1,32 @@
+---
+permalink: feed.xml
+eleventyExcludeFromCollections: true
+metadata:
+  title: plug11ty
+  url: https://plug11ty.com/
+  feedUrl: https://plug11ty.com/feed.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ metadata.title }}</title>
+  <link href="{{ metadata.feedUrl }}" rel="self"/>
+  <link href="{{ metadata.url }}"/>
+    <updated>{{ collections.all | rssLastUpdatedDate }}</updated>
+  <id>{{ metadata.url }}</id>
+  {%- if collections.plugins.length -%}
+    {%- for plugin in collections.plugins %}
+      {% set absolutePostUrl %}{{ plugin.url | url | absoluteUrl(metadata.url) }}{% endset %}
+      <entry>
+        <title>{{ plugin.data.title }}</title>
+        <summary>{{ plugin.data.description }}</summary>
+        <link href="{{ absolutePostUrl }}"/>
+        <updated>{{ plugin.date | rssDate }}</updated>
+        <id>{{ absolutePostUrl }}</id>
+        <author>
+          <name>{{ plugin.data.maintainer.name }}</name>
+        </author>
+        <content type="html">{{ '<p>' + plugin.data.description + '</p>' + plugin.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+      </entry>
+    {%- endfor %}
+  {%- endif -%}
+</feed>

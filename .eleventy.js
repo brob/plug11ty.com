@@ -1,9 +1,11 @@
 const svgContents = require("eleventy-plugin-svg-contents");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const rssPlugin = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(svgContents);
+  eleventyConfig.addPlugin(rssPlugin);
 
   eleventyConfig.addCollection("plugins", function(collectionApi) {
     return collectionApi.getFilteredByTag('plugins').sort((a, b) => {
