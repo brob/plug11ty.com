@@ -76,7 +76,7 @@ displays the default reader bar *(default works in liquid and nunjucks templates
 displays the reader bar with height of 8px and a red background color
 
 ```twig
-{% readerBar "8px" "#ff0000" "#0000ff" %}
+{% raw %}{% readerBar "8px" "#ff0000" "#0000ff" %}
 {% endraw %}
 ```
 
@@ -85,14 +85,14 @@ displays the reader bar with height of 8px, red background color and blue fill c
 **Obs for nunjucks templates:** the arguments need to be comma separated.
 
 ```twig
-{% readerBar, "8px", "#ff0000", "#0000ff" %}
+{% raw %}{% readerBar "8px", "#ff0000", "#0000ff" %}
 {% endraw %}
 ```
 
 **Obs for handlebars templates:** all parameters must be informed.
 
 ```twig
-{{{ readerBar "8px" "#ff0000" "#0000ff" }}}
+{% raw %}{{{ readerBar "8px" "#ff0000" "#0000ff" }}}
 {% endraw %}
 ```
 
