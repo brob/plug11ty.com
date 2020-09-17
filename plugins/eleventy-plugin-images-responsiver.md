@@ -8,7 +8,7 @@ categories:
 maintainer:
   name: Nicolas Hoizey
   url: https://nicolas-hoizey.com
-githubUrl: https://github.com/nhoizey/eleventy-plugin-images-responsiver
+githubUrl: https://github.com/nhoizey/images-responsiver/tree/main/packages/eleventy-plugin-images-responsiver
 description: eleventy-plugin-images-responsiver is a simple solution for most
   responsive images needs with Eleventy. Responsive Images are difficult to
   implement, but they’re required to provide a good performance to Web users.
