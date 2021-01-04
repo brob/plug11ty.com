@@ -33,7 +33,7 @@ module.exports = function(eleventyConfig) {
 ```
 <head>
   ...
-  {% eleventyGoogleFonts 'https://fonts.googleapis.com/css2?family=Overpass:wght@600&display=swap' %}
+  {%\ eleventyGoogleFonts 'https://fonts.googleapis.com/css2?family=Overpass:wght@600&display=swap' \%}
   ...
 </head>
 ```
