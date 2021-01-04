@@ -7,8 +7,7 @@ maintainer:
   name: takanorip
   url: https://takanorip.com/
 githubUrl: https://www.npmjs.com/package/eleventy-google-fonts
-description: A Nunjucks shortcode to optimize Google Fonts. This shortcode
-  download and inline Google Font's CSS.
+description: A Nunjucks shortcode to optimize Google Fonts. This shortcoded ownload and inline Google Font's CSS.
 ---
 # eleventy-google-fonts
 
