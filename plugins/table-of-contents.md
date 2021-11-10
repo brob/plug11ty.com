@@ -12,7 +12,6 @@ githubUrl: https://github.com/jdsteinbach/eleventy-plugin-toc
 description: This Eleventy plugin will generate a TOC from page content using an
   Eleventy filter.
 ---
-
 ## Default Options
 
 ```js
@@ -29,7 +28,7 @@ description: This Eleventy plugin will generate a TOC from page content using an
 ### 1. Install the plugin
 
 ```bash
-npm i --save eleventy-plugin-toc
+npm i --save-dev eleventy-plugin-toc
 ```
 
 ### 2. Add the plugin to Eleventy config
@@ -54,7 +53,7 @@ module.exports = function (eleventyConfig) {
 </article>
 <aside>
   {{ content | toc }}
-</article>{% endraw %}
+</aside>{% endraw %}
 ```
 
 ### 4. Override default options if necessary
