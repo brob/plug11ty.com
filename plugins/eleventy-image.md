@@ -1,17 +1,16 @@
 ---
 layout: /plugin.njk
-title: Blog Tools
-readmeUrl: https://raw.githubusercontent.com/brob/eleventy-plugin-blog-tools/master/README.md
+title: Eleventy Image
+readmeUrl: https://raw.githubusercontent.com/11ty/eleventy-img/master/README.md
 categories:
   - content
-  - collection
+  - official
   - universal
 maintainer:
-  name: Bryan Robinson
-  url: https://bryanlrobinson.com
-githubUrl: https://github.com/brob/eleventy-plugin-blog-tools
-description: This plugin is a series of shortcodes and filters that aim to help
-  you write and organize your blog
+  name: Zach Leatherman
+  url: https://zachleat.com
+githubUrl: https://github.com/11ty/eleventy-img/
+description: Low level utility to perform build-time image transformations for both vector and raster images. Output multiple sizes, save multiple formats, cache remote images locally. Uses the sharp image processor.
 ---
 
 ## Install instructions

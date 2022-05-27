@@ -10,3 +10,13 @@
         <li class="mx-2 mb-8 sm:mb-0 sm:ml-auto"><a class="bg-transparent hover:bg-green-500 text-green-100 font-semibold hover:text-white py-2 px-4  border border-green-100 hover:border-transparent rounded" href="/admin/#/edit/plugins/{{ page.fileSlug }}">Edit</a></li>
     </ul>
 {% endblock bannerContent %}
+
+{% block main %}
+    {% if readmeUrl %}
+
+    {% fetchMD readmeUrl | safe %}
+
+    {% else %}
+    {{ content | safe }}
+    {% endif %}
+{% endblock main %}

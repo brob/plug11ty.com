@@ -20,7 +20,9 @@ a:hover {
 .main ul li, .main ol li {
     margin-bottom: .5rem;
 }
-
+h1 {
+    font-size: 3rem;
+}
 .container {
     width: 95vw;
 }
@@ -43,12 +45,11 @@ a:hover {
  * @author ericwbailey
  */
  pre {
-     background-color: #2b2b2b;
+     background-color: #c6f6d5;
      padding: 1rem;
  }
  code[class*="language-"],
  pre[class*="language-"] {
-     color: #f8f8f2;
      background: none;
      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
      text-align: left;
