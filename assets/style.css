@@ -47,6 +47,8 @@ h1 {
  pre {
      background-color: #c6f6d5;
      padding: 1rem;
+     overflow: scroll;
+
  }
  code[class*="language-"],
  pre[class*="language-"] {
@@ -58,7 +60,6 @@ h1 {
      word-break: normal;
      word-wrap: normal;
      line-height: 1.5;
- 
      -moz-tab-size: 4;
      -o-tab-size: 4;
      tab-size: 4;
