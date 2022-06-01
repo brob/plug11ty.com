@@ -1,6 +1,6 @@
 ---
 layout: /plugin.njk
-title: Blog Tools
+title: Ghost Data Plugin
 readmeUrl: https://raw.githubusercontent.com/daviddarnes/eleventy-plugin-ghost/main/README.md
 categories:
   - content
