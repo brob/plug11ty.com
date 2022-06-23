@@ -35,7 +35,7 @@ The plugin turns [11ty shortcodes](https://www.11ty.dev/docs/shortcodes/) like t
 
 {% raw %}
 
-```njk
+```
 {% metagen
   title="Eleventy Plugin Meta Generator",
   desc="An eleventy shortcode for generating meta tags.",
@@ -101,7 +101,7 @@ To make your metadata dynamic, you can use template data as arguments to the sho
 
 {% raw %}
 
-```njk
+```
 ---
 title: Some title
 desc: Some description
@@ -133,7 +133,7 @@ Shorthand syntax:
 
 {% raw %}
 
-```njk
+```
 ---
 metadata:
   title: foo bar
