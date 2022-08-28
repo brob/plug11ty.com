@@ -48,4 +48,4 @@ collections:
       
       - { label: "GitHub/NPM URL", name: "githubUrl", widget: "string", required: false }
       - { label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown", hint: "Only use this if you haven't provided a GitHub Readme URL"}
+      - {label: "Body", name: "body", required: false, widget: "markdown", hint: "Only use this if you haven't provided a GitHub Readme URL"}
