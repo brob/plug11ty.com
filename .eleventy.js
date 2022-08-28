@@ -8,14 +8,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(svgContents);
   eleventyConfig.addPlugin(rssPlugin);
 
-
   eleventyConfig.addNunjucksAsyncShortcode("fetchMD", async function(url) {
     const {val} = url;
     const res = await axios.get(val)
     
     return md.render(res.data);
   })
-
 
   eleventyConfig.addCollection("plugins", function(collectionApi) {
     return collectionApi.getFilteredByTag('plugins').sort((a, b) => {
