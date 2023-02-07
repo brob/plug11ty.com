@@ -65,7 +65,7 @@ module.exports = function (eleventyConfig) {
 ### Usage in templates
 
 ```liquid
-{% rollup "assets/js/some.js" | url %}
+{% raw %}{% rollup "assets/js/some.js" | url %}{% endraw %}
 ```
 
 ### Possible options
