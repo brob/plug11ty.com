@@ -3,7 +3,7 @@
 
 {% block bannerContent %}
     <h1 class="text-5xl">{{ title }}</h1>
-    <p class="mb-5">{{ description }}</p>
+    <p class="mb-5">{{ description |escape }}</p>
     <ul class="links sm:flex flex-wrap py-2 justify-start -mx-2">
         <li class="mx-2 mb-8 sm:mb-0"><a class="bg-transparent hover:bg-green-500 text-green-100 font-semibold hover:text-white py-2 px-4 border border-green-100 hover:border-transparent rounded" href="{{ githubUrl }}">Repository</a></li>
         <li class="mx-2 mb-8 sm:mb-0"><a class="bg-transparent hover:bg-green-500 text-green-100 font-semibold hover:text-white py-2 px-4 border border-green-100 hover:border-transparent rounded" href="{{ maintainer.url }}">Maintained by {{ maintainer.name }}</a></li>

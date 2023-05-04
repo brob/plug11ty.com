@@ -3,7 +3,7 @@ var DATA = [
         {% for plugin in collections.plugins %}
         {
             "name": "{{ plugin.data.title }}",
-            "description": "{{ plugin.data.description }}",
+            "description": "{{ plugin.data.description | striptags| escape }}",
             "url": "{{ plugin.url }}",
             "remoteUrl": "{{ plugin.data.githubUrl }}",
             "categories": [

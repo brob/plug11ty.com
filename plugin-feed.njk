@@ -7,7 +7,7 @@ permalink: "/plugins.json"
         {% for plugin in collections.plugins %}
         {
             "name": "{{ plugin.data.title }}",
-            "description": "{{- plugin.data.description -}}",
+            "description": "{{- plugin.data.description |escape -}}",
             "url": "{{ plugin.url }}",
             "remoteUrl": "{{ plugin.data.githubUrl }}",
             "categories": [
